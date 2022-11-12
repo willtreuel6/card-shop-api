@@ -26,6 +26,12 @@ public class Admin {
     @Column(name = "pWord")
     private String pWord;
 
+    @OneToMany(mappedBy = "admin")
+    private List<Box> boxList;
+
+    @OneToMany(mappedBy = "admin")
+    private List<Card> cardList;
+
 
     public Admin() {
     }
