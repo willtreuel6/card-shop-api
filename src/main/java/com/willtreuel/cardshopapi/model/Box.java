@@ -62,35 +62,35 @@ public class Box {
         return boxName;
     }
 
-    public void setSport(String sport) {
+    public void setBoxSport(String sport) {
         this.sport = sport;
     }
 
-    public String getSport() {
+    public String getBoxSport() {
         return sport;
     }
 
-    public void setPrice(String price) {
+    public void setBoxPrice(String price) {
         this.price = price;
     }
 
-    public String getPrice() {
+    public String getBoxPrice() {
         return price;
     }
 
-    public void setDescription(String description) {
+    public void setBoxDescription(String description) {
         this.description = description;
     }
 
-    public String getDescription() {
+    public String getBoxDescription() {
         return description;
     }
 
-    public void setInStock(boolean inStock) {
+    public void setBoxInStock(boolean inStock) {
         this.inStock = inStock;
     }
 
-    public Boolean getInStock(){
+    public Boolean getBoxInStock(){
         return inStock;
     }
 
