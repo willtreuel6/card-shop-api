@@ -26,6 +26,7 @@ public class Admin {
     @Column(name = "pWord")
     private String pWord;
 
+
     public Admin() {
     }
 
