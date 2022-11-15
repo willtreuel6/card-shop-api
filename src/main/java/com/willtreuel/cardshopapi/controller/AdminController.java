@@ -32,7 +32,7 @@ public class AdminController {
 
     @DeleteMapping("/admin/{id}")
     public ResponseEntity<Void> deleteAdminById(@PathVariable Integer id){
-        as.deleteAddressById(id);
+        as.deleteAdminById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

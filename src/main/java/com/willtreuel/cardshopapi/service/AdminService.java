@@ -26,7 +26,7 @@ public class AdminService {
         return ar.findById(id).orElseThrow(() -> new NoSuchElementException("Admin not found!"));
     }
 
-    public void deleteAddressById(Integer id){
+    public void deleteAdminById(Integer id){
         ar.deleteById(id);
     }
 
