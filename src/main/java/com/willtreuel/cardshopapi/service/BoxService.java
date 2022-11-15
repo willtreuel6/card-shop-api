@@ -2,6 +2,7 @@ package com.willtreuel.cardshopapi.service;
 
 
 import com.willtreuel.cardshopapi.error.BodyMissingRequiredPropertiesException;
+import com.willtreuel.cardshopapi.model.Admin;
 import com.willtreuel.cardshopapi.model.Box;
 import com.willtreuel.cardshopapi.repository.BoxRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,17 @@ public class BoxService {
         br.deleteById(id);
     }
 
-    public Box updateBox(@Valid Box box){
+    public Box updateBoxById(@Valid Box box){
         if (box.getBoxId() == null)
             throw new BodyMissingRequiredPropertiesException("To update box you must include its id int he body");
         if (br.findById(box.getBoxId()).isEmpty())
             throw new NoSuchElementException(String.format("A person with ID %d does not exist so it can't be updated", box.getBoxId()));
         return br.save(box);
+    }
+
+
+    public Box getBoxById(Integer id){
+        return br.findById(id).orElseThrow(() -> new NoSuchElementException("Box not found!"));
     }
 
 
