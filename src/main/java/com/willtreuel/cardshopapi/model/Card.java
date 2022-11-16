@@ -11,6 +11,7 @@ import javax.persistence.*;
 public class Card {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cardId", nullable = false)
     private Integer cardId;
 
