@@ -10,7 +10,7 @@ import java.util.List;
 public class Admin {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "adminId", nullable = false)
     private Integer adminId;
 

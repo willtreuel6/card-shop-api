@@ -11,17 +11,24 @@ import javax.persistence.*;
 public class Box {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "boxId", nullable = false)
     private Integer boxId;
 
     @Column(name = "boxName", nullable = false)
     private String boxName;
 
+    @Column(name = "boxBrand")
+    private String boxBrand;
+
+    @Column(name = "boxYear")
+    private Integer boxYear;
     @Column(name = "sport")
     private String sport;
 
     @Column(name = "price")
-    private String price;
+    private float price;
+
 
     @Column(name = "description")
     private String description;
@@ -37,13 +44,15 @@ public class Box {
 
     public Box(){}
 
-    public Box(Integer boxId, String boxName, String sport, String price, String description, boolean inStock) {
+    public Box(Integer boxId, String boxName,String boxBrand, String sport,Integer boxYear, float price, String description, boolean inStock) {
         this.boxId = boxId;
         this.boxName = boxName;
         this.sport = sport;
+        this.boxYear = boxYear;
         this.price = price;
         this.description = description;
         this.inStock = inStock;
+        this.boxBrand = boxBrand;
     }
 
     public void setBoxId(Integer boxId) {
@@ -62,6 +71,22 @@ public class Box {
         return boxName;
     }
 
+    public void setBoxBrand(String boxBrand) {
+        this.boxBrand = boxBrand;
+    }
+
+    public String getBoxBrand() {
+        return boxBrand;
+    }
+
+    public void setBoxYear(Integer boxYear) {
+        this.boxYear = boxYear;
+    }
+
+    public Integer getBoxYear() {
+        return boxYear;
+    }
+
     public void setBoxSport(String sport) {
         this.sport = sport;
     }
@@ -70,11 +95,11 @@ public class Box {
         return sport;
     }
 
-    public void setBoxPrice(String price) {
+    public void setBoxPrice(float price) {
         this.price = price;
     }
 
-    public String getBoxPrice() {
+    public float getBoxPrice() {
         return price;
     }
 
