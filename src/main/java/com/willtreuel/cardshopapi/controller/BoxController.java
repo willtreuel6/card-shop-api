@@ -39,8 +39,8 @@ public class BoxController {
     }
 
     @PutMapping("/box")
-    public ResponseEntity<Box> updateBoxById(@RequestBody Box box){
-        Box updatedBox = bs.updateBoxById(box);
+    public ResponseEntity<Box> updateBoxById( @RequestBody Box box){
+        Box updatedBox = bs.updateBoxById( box);
         return new ResponseEntity<>(updatedBox, HttpStatus.CREATED);
     }
 }

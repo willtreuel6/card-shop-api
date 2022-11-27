@@ -34,7 +34,7 @@ public class Box {
     private String description;
 
     @Column(name = "inStock")
-    private boolean inStock;
+    private Integer inStock;
 
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
@@ -44,7 +44,7 @@ public class Box {
 
     public Box(){}
 
-    public Box(Integer boxId, String boxName,String boxBrand, String sport,Integer boxYear, float price, String description, boolean inStock) {
+    public Box(Integer boxId, String boxName,String boxBrand, String sport,Integer boxYear, float price, String description, Integer inStock) {
         this.boxId = boxId;
         this.boxName = boxName;
         this.sport = sport;
@@ -111,11 +111,11 @@ public class Box {
         return description;
     }
 
-    public void setBoxInStock(boolean inStock) {
+    public void setBoxInStock(Integer inStock) {
         this.inStock = inStock;
     }
 
-    public Boolean getBoxInStock(){
+    public Integer getBoxInStock(){
         return inStock;
     }
 

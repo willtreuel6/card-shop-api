@@ -18,6 +18,12 @@ public class Card {
     @Column(name = "cardName")
     private String cardName;
 
+    @Column(name = "cardBrand")
+    private String cardBrand;
+
+    @Column(name = "cardYear")
+    private Integer cardYear;
+
     @Column(name = "sport")
     private String sport;
 
@@ -34,13 +40,15 @@ public class Card {
 
     public Card(){}
 
-    public Card(Integer cardId, String cardName, String sport, String price, String desc)
+    public Card(Integer cardId, String cardName, String sport, String price, String desc, String cardBrand, Integer cardYear)
     {
         this.cardId = cardId;
         this.cardName = cardName;
         this.sport = sport;
         this.price = price;
         this.description = desc;
+        this.cardBrand = cardBrand;
+        this.cardYear = cardYear;
     }
 
     public Integer getCardId() {
@@ -81,5 +89,21 @@ public class Card {
 
     public String getCardDescription() {
         return description;
+    }
+
+    public void setCardBrand(String cardBrand) {
+        this.cardBrand = cardBrand;
+    }
+
+    public String getCardBrand() {
+        return cardBrand;
+    }
+
+    public void setCardYear(Integer cardYear) {
+        this.cardYear = cardYear;
+    }
+
+    public Integer getCardYear() {
+        return cardYear;
     }
 }
