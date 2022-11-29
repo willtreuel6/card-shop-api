@@ -20,8 +20,8 @@ public class Admin {
     @Column(name = "lastName")
     private String lastName;
 
-    @Column(name = "userName")
-    private String userName;
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "pWord")
     private String pWord;
@@ -36,11 +36,11 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(Integer aId, String fName, String lName, String uName, String passWord){
+    public Admin(Integer aId, String fName, String lName, String email, String passWord){
         this.adminId = aId;
         this.firstName = fName;
         this.lastName = lName;
-        this.userName = uName;
+        this.email = email;
         this.pWord = passWord;
 }
 
@@ -68,12 +68,12 @@ public class Admin {
         this.lastName = lastName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setEmail(String userName) {
+        this.email = email;
     }
 
     public String getpWord() {
