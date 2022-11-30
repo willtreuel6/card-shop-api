@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.EntityExistsException;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class EmailService {
@@ -31,6 +32,10 @@ public class EmailService {
 
     public void deleteEmailById(Integer id){
         er.deleteById(id);
+    }
+
+    public Email getEmailById(Integer id){
+        return er.findById(id).orElseThrow(() -> new NoSuchElementException("Email not found"));
     }
 
 
