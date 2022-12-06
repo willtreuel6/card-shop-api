@@ -36,6 +36,9 @@ public class Box {
     @Column(name = "inStock")
     private Integer inStock;
 
+    @Column(name = "boxImage")
+    private String boxImage;
+
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "adminId")
@@ -44,7 +47,7 @@ public class Box {
 
     public Box(){}
 
-    public Box(Integer boxId, String boxName,String boxBrand, String sport,Integer boxYear, float price, String description, Integer inStock) {
+    public Box(Integer boxId,String boxImage, String boxName,String boxBrand, String sport,Integer boxYear, float price, String description, Integer inStock) {
         this.boxId = boxId;
         this.boxName = boxName;
         this.sport = sport;
@@ -53,6 +56,7 @@ public class Box {
         this.description = description;
         this.inStock = inStock;
         this.boxBrand = boxBrand;
+        this.boxImage = boxImage;
     }
 
     public void setBoxId(Integer boxId) {
@@ -119,4 +123,11 @@ public class Box {
         return inStock;
     }
 
+    public String getBoxImage() {
+        return boxImage;
+    }
+
+    public void setBoxImage(String boxImage) {
+        this.boxImage = boxImage;
+    }
 }
