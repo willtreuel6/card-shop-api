@@ -33,6 +33,9 @@ public class Card {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "cardImage")
+    private String cardImage;
+
     @ManyToOne
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "adminId")
@@ -40,7 +43,7 @@ public class Card {
 
     public Card(){}
 
-    public Card(Integer cardId, String cardName, String sport, String price, String desc, String cardBrand, Integer cardYear)
+    public Card(Integer cardId, String cardImage, String cardName, String sport, String price, String desc, String cardBrand, Integer cardYear)
     {
         this.cardId = cardId;
         this.cardName = cardName;
@@ -49,6 +52,7 @@ public class Card {
         this.description = desc;
         this.cardBrand = cardBrand;
         this.cardYear = cardYear;
+        this.cardImage = cardImage;
     }
 
     public Integer getCardId() {
@@ -105,5 +109,13 @@ public class Card {
 
     public Integer getCardYear() {
         return cardYear;
+    }
+
+    public String getCardImage() {
+        return cardImage;
+    }
+
+    public void setCardImage(String cardImage) {
+        this.cardImage = cardImage;
     }
 }
