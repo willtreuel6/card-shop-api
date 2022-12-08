@@ -21,7 +21,7 @@ public class ContactController {
     @Autowired
     private ContactService cs;
 
-    @GetMapping("/contact/")
+    @GetMapping("/contact")
     public ResponseEntity<List<Contact>> getContact(){
         return ResponseEntity.status(HttpStatus.OK).body(cs.getContact());
     }
