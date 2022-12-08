@@ -45,4 +45,5 @@ public class CardService {
     public Card getCardById(Integer id){
         return cr.findById(id).orElseThrow(() -> new NoSuchElementException("Box not found"));
     }
+
 }
