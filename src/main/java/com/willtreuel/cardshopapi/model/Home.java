@@ -4,14 +4,13 @@ package com.willtreuel.cardshopapi.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="home")
+@Table(name = "home")
 public class Home {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "homeId", nullable = false)
     private Integer homeId;
-
 
     @Column(name = "homeBannerBold")
     private String homeBannerBold;
@@ -26,9 +25,9 @@ public class Home {
     private String homeDescription;
 
 
-    public Home(){}
+    Home(){}
 
-    public Home(Integer homeId, String homeBannerBold, String homeBannerText, String homeTitle, String homeDescription){
+    Home(Integer homeId, String homeBannerBold, String homeBannerText, String homeTitle, String homeDescription){
         this.homeId = homeId;
         this.homeBannerBold = homeBannerBold;
         this.homeBannerText = homeBannerText;
