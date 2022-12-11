@@ -23,7 +23,7 @@ public class ContactController {
 
     @GetMapping("/contact")
     public ResponseEntity<List<Contact>> getContact(){
-        return ResponseEntity.status(HttpStatus.OK).body(cs.getContact());
+        return ResponseEntity.status(HttpStatus.OK).body(cs.getAllContact());
     }
 
     @PutMapping("/contact")
