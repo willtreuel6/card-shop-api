@@ -31,5 +31,4 @@ public class AboutController {
         return new ResponseEntity<>(updatedAbout, HttpStatus.CREATED);
     }
 
-
 }
