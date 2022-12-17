@@ -24,15 +24,18 @@ public class Home {
     @Column(name = "homeDescription")
     private String homeDescription;
 
+    @Column(name = "homeTitleTwo")
+    private String homeTitleTwo;
 
     Home(){}
 
-    Home(Integer homeId, String homeBannerBold, String homeBannerText, String homeTitle, String homeDescription){
+    Home(Integer homeId, String homeBannerBold, String homeBannerText, String homeTitle,String homeTitleTwo, String homeDescription){
         this.homeId = homeId;
         this.homeBannerBold = homeBannerBold;
         this.homeBannerText = homeBannerText;
         this.homeTitle = homeTitle;
         this.homeDescription = homeDescription;
+        this.homeTitleTwo = homeTitleTwo;
     }
 
     public Integer getHomeId() {
@@ -71,7 +74,16 @@ public class Home {
         return homeDescription;
     }
 
+
     public void setHomeDescription(String homeDescription) {
         this.homeDescription = homeDescription;
+    }
+
+    public String getHomeTitleTwo() {
+        return homeTitleTwo;
+    }
+
+    public void setHomeTitleTwo(String homeTitleTwo) {
+        this.homeTitleTwo = homeTitleTwo;
     }
 }
