@@ -20,7 +20,13 @@ create table home(home_id int not null auto_increment, home_banner_bold varchar(
 
 create table footer(footer_id int not null auto_increment, footer_bold longtext, footer_text longtext, primary key(footer_id));
 
+create table faq(faq_id int not null auto_increment, faq_bold_header longtext, faq_description longtext, faqQOne longtext, faqQTwo longtext, faqQThree longtext, faqQFour longtext, faqAOne longtext, faqATwo longtext, faqAThree longtext, faqAFour longtext, faq_bold_foot longtext, faq_foot_description longtext, primary key(faq_id));
+
 Insert into admin(admin_id,first_name,last_name,email,p_word) values(1,"Will","Treuel","willtreuel6@gmail.com","wht1257"), (2,"Ty","Brown","tbrown25@gmail.com","tb12"), (3,"Derik","Walker","dwalk10@gmail.com","dwitit");
+
+insert into faq
+values(1,"Frequently Asked Questions","Please refer to the questions below to see frequently asked questions from our customers.","What are your store hours?","Do you carry non-sport cards, such as Magic or Pokemon?","Do you have an ebay store with listings?","Are you open on New Years Day?","We are open 9AM-5PM monday through friday.","I'm sorry we only carry sport cards.","Yes we do please visit our ebay store @ ebay.com/rochestersportcards","Yes! We are open on January 1st 2023.","Still Have Questions?","Please click the link below to see the different ways to contact us!");
+
 
 Insert into box(box_id,box_name,box_brand,box_year,sport,price,description,in_stock,box_image,admin_id) 
 values(1,"2022 Topps Chrome Baseball","Topps",2022,"baseball",199.99,"",1,"../../../assets/images/2022toppschrome.png",2),
