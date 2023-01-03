@@ -5,6 +5,7 @@ package com.willtreuel.cardshopapi.controller;
 import com.willtreuel.cardshopapi.model.Admin;
 import com.willtreuel.cardshopapi.model.Box;
 import com.willtreuel.cardshopapi.service.BoxService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +26,10 @@ public class BoxController {
         return ResponseEntity.status(HttpStatus.OK).body(bs.getAllBox());
     }
 
+    @GetMapping("/box/{id}")
+    public ResponseEntity<Box> getBoxById(@PathVariable Integer id){
+        return new ResponseEntity<>(bs.getBoxById(id), HttpStatus.OK);
+    }
 
     @DeleteMapping("/box/{id}")
     public ResponseEntity<Void> deleteBoxById(@PathVariable Integer id){
