@@ -1,6 +1,7 @@
 package com.willtreuel.cardshopapi.controller;
 
 
+import com.willtreuel.cardshopapi.model.Box;
 import com.willtreuel.cardshopapi.model.Card;
 import com.willtreuel.cardshopapi.service.CardService;
 import net.bytebuddy.asm.Advice;
@@ -22,6 +23,11 @@ public class CardController {
     @GetMapping("/card")
     public ResponseEntity<List<Card>> getAllCards(){
         return ResponseEntity.status(HttpStatus.OK).body(cs.getAllCard());
+    }
+
+    @GetMapping("/card/{id}")
+    public ResponseEntity<Card> getCardById(@PathVariable Integer id){
+        return new ResponseEntity<>(cs.getCardById(id), HttpStatus.OK);
     }
 
     @DeleteMapping("/card/{id}")
